@@ -1,7 +1,7 @@
 # Assignment 1.1
 
 In this assignment we explore different types of regression such as **OLS** (ordinary least squares) regression, **Ridge** regression and **Lasso** regression.
-We've used the **SPARCS Hospital Dataset** (https://www.cse.iitd.ac.in/~cs5170401/Assignment_1.zip) for training and testing purposes. In first part of the assignment, we implement OLS and Ridge regression from scratch using original features of the dataset. In the next part of the assignment, we experiment with **feature creation & selection** to improve our results. The general idea is to create large number of features (>300) and then use **LassoLars** (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoLars.html) to select top 300 features to create our model. Finally, OLS is used with these selected features to give predictions on the test set. 
+We've used the **SPARCS Hospital Dataset** (https://www.cse.iitd.ac.in/~cs5170401/Assignment_1.zip) to predict Total Costs of a hospital patient given 30 features such as Lenght of Stay, Ethnicity, Gender, Risk of Mortality, Severity of Illness Code etc. In first part of the assignment, we implement OLS and Ridge regression from scratch using original features of the dataset. In the next part of the assignment, we experiment with **feature creation & selection** to improve our results. The general idea is to create large number of features (>300) and then use **LassoLars** (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoLars.html) to select top 300 features to create our model. Finally, OLS is used with these selected features to give predictions on the test set. 
 
 Details of the experiments done and final model selected can be found in **report.pdf**.
 
