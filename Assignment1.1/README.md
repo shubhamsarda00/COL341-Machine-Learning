@@ -20,15 +20,15 @@ In linear.py, we manually create these top 300 features to build the model. Ther
 
 a) **python3 linear.py a trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
-Here, we run OLS to build the model using original features of the dataset. We write the predictions (1 per line) (for testfile.csv) and create a line aligned outputfile.txt. We also output your weights (including intercept in the very first line) in the weightfile.txt.
+Here, we run OLS to build the model using original features of the dataset. We write the predictions (1 per line) (for testfile.csv) and create a line aligned outputfile.txt. We also output our weights (including intercept in the very first line) in the weightfile.txt.
 
 b) **python3 linear.py b trainfile.csv testfile.csv regularization.txt outputfile.txt weightfile.txt bestparameter.txt**
 
-The parameters are the same as mode ’a’, with the additional Regularization Parameter List (λ) being an input. We perform 10-Fold Cross validation for all the λ values and report the output and weights as in previous mode. Additionally, report the best regularization parameter in the file bestparameter.txt.
+The parameters are the same as mode ’a’, with the additional Regularization Parameter List (λ) being an input. We perform 10-Fold Cross validation for all the λ values and report the output and weights as in previous mode. Additionally, it reports the best regularization parameter in the file bestparameter.txt.
 
 c) **python3 linear.py c trainfile.csv testfile.csv outputfile.txt**
 
-We create and use your best features (found using Lasso) and calculate your predictions using the same.
+We create and uses our best features (found using Lasso) and calculates your predictions using the same.
 
 ### Libraries Required
 
