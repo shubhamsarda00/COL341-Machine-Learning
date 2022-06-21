@@ -28,7 +28,7 @@ The parameters are the same as mode ’a’, with the additional Regularization 
 
 c) **python3 linear.py c trainfile.csv testfile.csv outputfile.txt**
 
-We create and uses our best features (found using Lasso) and calculates your predictions using the same.
+We create and uses our best features (found using Lasso) and calculates your predictions by using OLS with the same.
 
 ### Libraries Required
 
