@@ -23,11 +23,11 @@ Here, we run OLS to build the model using original features of the dataset. We w
 
 b) **python3 linear.py b trainfile.csv testfile.csv regularization.txt outputfile.txt weightfile.txt bestparameter.txt**
 
-The parameters are the same as mode ’a’, with the additional Regularization Parameter List (λ) being an input. The **regularization.txt.** should contain values of λ in as single line separated by ','. Sample file can be found in the **src** folder. We perform Ridge regression with 10-Fold Cross validation for all the λ values and report the output and weights as in previous modes. Additionally, it reports the best regularization parameter in the file **bestparameter.txt**.
+The parameters are the same as mode ’a’, with the additional Regularization Parameter List (λ) being an input. The **regularization.txt** file should contain values of λ in a single line separated by ','. Sample file can be found in the **src** folder. We perform Ridge regression with 10-Fold Cross validation for all the λ values and report the output and weights as in previous modes. Additionally, it reports the best regularization parameter in the file **bestparameter.txt**.
 
 c) **python3 linear.py c trainfile.csv testfile.csv outputfile.txt**
 
-We create and use our best features (found using LassoLars) and  give predictions predictions by using OLS with the same.
+We create and use our best features (found using LassoLars) and give predictions predictions by using OLS with the same.
 
 ### Libraries Required
 
