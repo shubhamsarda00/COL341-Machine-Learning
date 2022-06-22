@@ -14,7 +14,7 @@ More Details on problem statement in **Assignment_1.pdf**.
 
 1. **Assignment1.1.ipynb**
 
-The code for all the experiments (including the commented out code) can be found in Assignment1.1.ipynb. In the code for Assignment1.1.ipynb, it has been assumed that the directory containing the notebook also contains the**data** folder. 
+The code for all the experiments (including the commented out code) can be found in Assignment1.1.ipynb. In the code for Assignment1.1.ipynb, it has been assumed that the directory containing the notebook also contains the **data** folder, similar to the current repository structure. 
 
 2. **linear.py**
 
