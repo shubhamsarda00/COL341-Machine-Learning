@@ -10,7 +10,7 @@ b) Adaptive Learning Rate using **n<sub>t</sub> = n<sub>0</sub>/t<sup>0.5</sup>*
 
 c) Adaptive Learning Rate using **αβ backtracking line search** algorithm
 
-In next part of the assignment, we find the optimal learning rate strategy and the corresponding hyperparamters including batch size to obtain the best results using original features. We further extend this part by incorporating feature creation and selection.
+In next part of the assignment, we find the optimal learning rate strategy and the corresponding hyperparameters including batch size to obtain the best results using original features. We further extend this part by incorporating feature creation and selection.
 
 Details of the experiments done and final model selected can be found in **report.pdf**.
 
