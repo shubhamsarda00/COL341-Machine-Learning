@@ -48,7 +48,7 @@ Here, we use the optimal learning rate strategy and corresponding hyperparameter
 
 d) **python3 logistic.py d trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
-Here, we create the features selected using ANOVA in logistic_features_selection.py. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
+Here, we directly create the features selected using ANOVA in logistic_features_selection.py. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
 
 ### Libraries Required
 
