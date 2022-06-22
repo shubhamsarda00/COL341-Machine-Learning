@@ -18,7 +18,7 @@ The code for all the experiments (including the commented out code) can be found
 
 2. **linear.py**
 
-There are 3 commands for running this script.
+There are 3 modes (a,b,c) for running this script.
 
 a) **python3 linear.py a trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
