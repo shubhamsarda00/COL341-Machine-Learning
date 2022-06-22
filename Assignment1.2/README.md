@@ -3,6 +3,7 @@
 In this assignment, we implement **multinomial logistic regression** to predict the number of days (1-8) a patient stays in the hospital. We've again used the **SPARCS Hospital dataset** (https://healthdata.gov/State/Hospital-Inpatient-Discharges-SPARCS-De-Identified/nff8-2va3), as done in Assignment 1.1. Preprocessed data can be found in **data** folder of **src** directory.
 
 In first part of the assignment, we implement the classification model using **batch/mini-batch gradient descent** with original features of the dataset such as Total Costs, Ethnicity, Gender, Risk of Mortality, Severity of Illness Code etc. We implement 3 variants of gradient descent:
+
 a) Fixed Learning Rate 
 
 b) Adaptive Learning Rate using **n<sub>t</sub> = n<sub>0</sub>/t<sup>0.5</sup>**,  where t= number of iteration
