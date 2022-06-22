@@ -18,7 +18,7 @@ The code for all the experiments (including the commented out code) can be found
 
 2. **linear.py**
 
-In linear.py, we manually create these top 300 features to build the model. There are 3 commands for running this script.
+There are 3 commands for running this script.
 
 a) **python3 linear.py a trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
@@ -30,7 +30,7 @@ The parameters are the same as mode ’a’, with the additional Regularization 
 
 c) **python3 linear.py c trainfile.csv testfile.csv outputfile.txt**
 
-We create and use our best features (found using LassoLars) and give predictions predictions by using OLS with the same.
+Here, we manually create the top 300 features (found using LassoLars) to build the model and give predictions predictions by using OLS with the same.
 
 ### Libraries Required
 
