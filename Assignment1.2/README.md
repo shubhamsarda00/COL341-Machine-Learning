@@ -4,7 +4,8 @@ In this assignment, we implement **multinomial logistic regression** to predict 
 
 In first part of the assignment, we implement the classification model using **batch/mini-batch gradient descent** with original features of the dataset such as Total Costs, Ethnicity, Gender, Risk of Mortality, Severity of Illness Code etc. We implement 3 variants of gradient descent:
 a) Fixed Learning Rate
-b) Adaptive Learning Rate using n<sub>t</sub>
+b) Adaptive Learning Rate using n<sub>t</sub> = n<sub>0</sub>/t<sup>0.5</sup>,  where t= number of iteration
+c) Adaptive Learning Rate using αβ backtracking line search algorithm
 
 
 Details of the experiments done and final model selected can be found in **report.pdf**.
