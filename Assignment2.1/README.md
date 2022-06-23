@@ -44,17 +44,19 @@ Everything is same as **neural_a** except **input_path** contains the Devanagri 
 
 Command to run the script: **python neural_c.py input_path output_path param.txt**
 
-Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
+Here, **input_path** and **ouput_path** remain same as in part B. Here the file param.txt, to which the complete absolute path will be provided, will contain 1 line which will be a list specifying the architecture (just the way it is specified in param.txt for part a). The code must not exceed a time limit of 300 seconds. The script trains the specified model with the optimal parameters found and write the weight files after training to the output path in the same format as specified in submission instructions for part a. It also writes a text file to the output path with the name "my params.txt" specifying each of the following in a new line for your best parameters: number of epochs, batch size, learn rate type (0 for fixed 1 for adaptive), learn rate value (initial value in case of adaptive), activation function (0 for log sigmoid, 1 for tanh, 2 for relu), loss function (0 for CE an 1 for MSE), optimizer type (0 for vanilla SGD, 1 for momentum, 2 for nesterov, 3 for RMSprop and 4 for adam, 5 for nadam), seed value for the numpy.random.normal
+
+We use the optimal hyperparameters found for both the architectures using experimentation in "Part C" section of Assignment2.1.ipynb file. 
 
 
 5) **neural_d.py**
 
 Command to run the script: **python neural_d.py input_path output_path**
 
+Here, **input_path** and **ouput_path** remain same as in part B. The script trains the best architecture along with
+best parameters (found using experimentation in "Part D" section of Assignment2.1.ipynb file). It produces the weight files to output path in the same way as specified for part a). It also write a text file to the output path with the name my params.txt specifying each of the
+following in a new line for your best parameters:number of epochs, batch size, learn rate type (0 for fixed 1 for adaptive), learn rate value (initial value in case of adaptive), activation function (0 for log sigmoid, 1 for tanh, 2 for relu), loss function (0 for CE an 1 for MSE), optimizer type (0 for vanilla SGD, 1 for momentum, 2 for nesterov, 3 for RMSprop and 4 for adam, 5 for nadam), architecture (list specifying architecture, [100,50,10] implies 2 hidden layers with 100 and 50 neurons and 10 neurons in the output layer), seed value for the numpy.random.normal
 
-
-
-Here, we directly create the features selected using ANOVA in logistic_features_selection.py to build the model. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
 
 ### Libraries Required
 
