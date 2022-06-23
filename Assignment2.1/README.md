@@ -60,8 +60,7 @@ Here, we directly create the features selected using ANOVA in logistic_features_
 
 1. Numpy
 2. Pandas
-4. Scipy
-5. Matplotlib
+3. Matplotlib
 
 
 
