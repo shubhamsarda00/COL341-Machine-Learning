@@ -2,7 +2,7 @@
 
 In this assignment, we implement **Artificial Neural Networks** from scratch to solve classification problems. The assignment can be broken down into 4 parts:
 
-**Part A**: We build a general neural network architecture and train it on a **Toy Dataset** (can be found in **data** folder of **src** directory) to solve the binary classification problem. Loss functions can be one of **mean squared error (MSE)** or **cross entropy loss**. Activation function in hidden layers can be one of **sigmoid**, **tanh** or **relu**. **Xavier initialisation** is used to initialize the weights. Learning rate can be fixed or adaptive.
+**Part A**: We build a general neural network architecture and train it on a **Toy Dataset** (can be found in **data** folder of **src** directory) to solve the binary classification problem. Loss function can be one of **mean squared error (MSE)** or **cross entropy loss**. Activation function in hidden layers can be one of **sigmoid**, **tanh** or **relu**. **Xavier initialisation** is used to initialize the weights. Learning rate can be fixed or adaptive.
 
 **Part B**: We modify the neural network implemented in Part A to cater to multiclass classification. The model is trained on the **Devanagri Handwritten Character Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk). The training dataset has 8-bit 32x32 greyscale images corresponding to 46
 Devanagari characters (last column in both training and test data is for labels). 
