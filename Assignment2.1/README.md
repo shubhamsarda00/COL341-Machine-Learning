@@ -1,8 +1,13 @@
 # Assignment 2.1
 
-In this assignment, we implement **multinomial logistic regression** to predict the number of days (1-8) a patient stays in the hospital. We've again used the **SPARCS Hospital dataset** (https://healthdata.gov/State/Hospital-Inpatient-Discharges-SPARCS-De-Identified/nff8-2va3), as done in Assignment 1.1. Preprocessed data can be found in **data** folder of **src** directory.
+In this assignment, we implement **Artificial Neural Networks** from scratch to solve classification problems. The assignment can be broken down into 4 parts:
 
-In first part of the assignment, we implement the classification model using **batch/mini-batch gradient descent** with original features of the dataset such as Total Costs, Ethnicity, Gender, Risk of Mortality, Severity of Illness Code etc. We implement 3 variants of gradient descent:
+**Part A**: We build a general neural network architecture and train it on a **Toy Dataset** (can be found in **data** folder of **src** directory) to solve the binary classification problem. Loss functions can be one of **mean squared error (MSE)** or **cross entropy loss**. Activation function in hidden layers can be one of **sigmoid**, **tanh** or **relu**. **Xavier initialisation** is used to initialize the weights. Learning rate can be fixed or adaptive.
+
+**Part B**: We modify the neural network implemented in Part A to cater to multiclass classification. The model is trained on the **Devanagri Handwritten Character Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk). The training dataset has 8-bit 32x32 greyscale images corresponding to 46
+Devanagari characters (last column in both training and test data is for labels). 
+
+**Part C**: In Part A and B, we've used convential gradient descent to train the neural networks. In this part, we additionally implement **Momentum**, **Nesterov Accelerated Gradient Descent**, **RMSProp**, **Adam** and **Nadam** optimizers. Further, we are given two generic architectures (\[Input,256,46]  and
 
 a) Fixed Learning Rate 
 
@@ -12,17 +17,20 @@ c) Adaptive Learning Rate using **αβ backtracking line search** algorithm
 
 In next part of the assignment, we find the optimal learning rate strategy and the corresponding hyperparameters including batch size to obtain the best results using original features. We further extend this part by incorporating feature creation and selection.
 
-Details of the experiments done and final model selected can be found in **report.pdf**.
+Details of the experiments done and final models selected can be found in **report.pdf**.
 
-More Details on problem statement in **Assignment_1.pdf**.
+More Details on problem statement in **Assignment_2.pdf**.
 
 ### Running the Code
 
+**Note:** The names of ".csv" files present in the compressed folders should not be modified.
+
 1. **Assignment2.1.ipynb**
 
-The code for all the experiments (including the commented out code) can be found in Assignment1.2.ipynb. This includes experiments for finding best learning strategy including hyperparameters as well those pertaining to feature creation and selection. In the code for Assignment1.2.ipynb, it has been assumed that the directory containing the notebook also contains the **data** folder, similar to the current repository structure.
+The code for all the experiments (including the commented out code) can be found in Assignment2.1.ipynb. This includes experiments for Part C as well as Part D. In the code for Assignment2.1.ipynb, it has been assumed that the directory containing the notebook also contains the **data** folder (similar to the current repository structure), where all the ".csv" files are present. 
 
-2. **logistic_features_selection.py**
+
+2. **neural_a.py**
 
 It can be run using the following command: **python3 logistic.py a trainfile.csv testfile.csv param.txt outputfile.txt weightfile.txt**
 
@@ -30,23 +38,22 @@ It first creates the features (>=500) pertaining to the best model. It further s
 
 Note: The optimal features to be created were found using experimentation in "Part D" section of Assignment1.1.ipynb
 
-3. **logistic.py**
+3. **neural_b.py**
 
-There are 4 modes (a,b,c,d) for running this script.
 
-a) **python3 logistic.py a trainfile.csv testfile.csv param.txt outputfile.txt weightfile.txt**
+
+4) **neural_c.py**
 
 Here, param.txt will contain three lines of input, the first being a number (1-3) indicating which learning rate strategy to use and the second being the fixed learning rate (for (i)), η<sub>0</sub> value for adaptive learning rate (for (ii)) or a comma separated (learning rate, α, β) value for αβ backtracking (for (iii)). The third line will be the exact number of epochs for your gradient updates. We use batch gradient descent using original features of the dataset with the specification provided in param.txt and generate output and weights file as done in logistic_features_selection.py.
 
-b) **python3 logistic.py b trainfile.csv testfile.csv param.txt outputfile.txt weightfile.txt**
+5) **neural_d.py**
 
 Here, we perform mini batch gradient descent using the original features of the dataset. The arguments mean the same as mode a, with an additional line 4 in param.txt specifying the batch size (int). 
 
-c) **python3 logistic.py c trainfile.csv testfile.csv outputfile.txt weightfile.txt**
+
 
 Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
 
-d) **python3 logistic.py d trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
 Here, we directly create the features selected using ANOVA in logistic_features_selection.py to build the model. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
 
@@ -60,8 +67,9 @@ Here, we directly create the features selected using ANOVA in logistic_features_
 
 
 ### Helpful Resources 
+
 1. https://ruder.io/optimizing-gradient-descent/index.html
 2. https://sudeepraja.github.io/Neural/
 3. https://www.ics.uci.edu/~pjsadows/notes.pdf
 
-https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk
+
