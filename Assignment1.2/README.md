@@ -28,7 +28,7 @@ It can be run using the following command: **python3 logistic.py a trainfile.csv
 
 It first creates the features (>=500) pertaining to the best model. It further selects the most predictive 500 features using **ANOVA** to build the classification model. We write the predictions (1 per line) and create a line aligned outputfile.txt, where the first line will correspond to the first row in testfile.csv and so on. We also output your weight matrix (which includes bias terms in the first row) by flattening the weight matrix rowwise, i.e., write the first row first (1 value per line), then second row and so on and create a line aligned weightfile.txt.
 
-Note: The optimal features to be created were found using experimentation in "Part D" section of Assignment1.1.ipynb
+Note: The optimal features to be created were found using experimentation in "Part D" section of Assignment1.2.ipynb
 
 3. **logistic.py**
 
@@ -44,11 +44,11 @@ Here, we perform mini batch gradient descent using the original features of the 
 
 c) **python3 logistic.py c trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
-Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
+Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.2.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
 
 d) **python3 logistic.py d trainfile.csv testfile.csv outputfile.txt weightfile.txt**
 
-Here, we directly create the features selected using ANOVA in logistic_features_selection.py to build the model. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
+Here, we directly create the features selected using ANOVA in logistic_features_selection.py to build the model. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.2.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
 
 ### Libraries Required
 
