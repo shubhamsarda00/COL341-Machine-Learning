@@ -18,7 +18,7 @@ More Details on problem statement in **Assignment_1.pdf**.
 
 ### Running the Code
 
-1. **Assignment1.2.ipynb**
+1. **Assignment2.1.ipynb**
 
 The code for all the experiments (including the commented out code) can be found in Assignment1.2.ipynb. This includes experiments for finding best learning strategy including hyperparameters as well those pertaining to feature creation and selection. In the code for Assignment1.2.ipynb, it has been assumed that the directory containing the notebook also contains the **data** folder, similar to the current repository structure.
 
@@ -63,3 +63,5 @@ Here, we directly create the features selected using ANOVA in logistic_features_
 1. https://ruder.io/optimizing-gradient-descent/index.html
 2. https://sudeepraja.github.io/Neural/
 3. https://www.ics.uci.edu/~pjsadows/notes.pdf
+
+https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk
