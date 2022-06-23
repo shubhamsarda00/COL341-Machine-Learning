@@ -7,15 +7,9 @@ In this assignment, we implement **Artificial Neural Networks** from scratch to 
 **Part B**: We modify the neural network implemented in Part A to cater to multiclass classification. The model is trained on the **Devanagri Handwritten Character Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk). The training dataset has 8-bit 32x32 greyscale images corresponding to 46
 Devanagari characters (last column in both training and test data is for labels). 
 
-**Part C**: In Part A and B, we've used convential gradient descent to train the neural networks. In this part, we additionally implement **Momentum**, **Nesterov Accelerated Gradient Descent**, **RMSProp**, **Adam** and **Nadam** optimizers. Further, we are given two generic architectures (\[Input,256,46]  and
+**Part C**: In Part A and B, we've used convential gradient descent to train the neural networks. In this part, we additionally implement **Momentum**, **Nesterov Accelerated Gradient Descent**, **RMSProp**, **Adam** and **Nadam** optimizers. Further, we are given two generic architectures: \[Input,256,46]  and \[Input, 512,256,128,64,46]. We tune the hyperparameters such as batch size, learning rate, type of activation function, optimizer algorithm used etc. to minimize the error for both the architectures on the Devanagri dataset. 
 
-a) Fixed Learning Rate 
-
-b) Adaptive Learning Rate using **n<sub>t</sub> = n<sub>0</sub>/t<sup>0.5</sup>**,  where t= number of iteration
-
-c) Adaptive Learning Rate using **αβ backtracking line search** algorithm
-
-In next part of the assignment, we find the optimal learning rate strategy and the corresponding hyperparameters including batch size to obtain the best results using original features. We further extend this part by incorporating feature creation and selection.
+**Part D**: In this part, we experiment with different architectures, hyperparameters etc. to maximize our accuracy on the test set of Devanagri dataset.
 
 Details of the experiments done and final models selected can be found in **report.pdf**.
 
@@ -32,27 +26,32 @@ The code for all the experiments (including the commented out code) can be found
 
 2. **neural_a.py**
 
-It can be run using the following command: **python3 logistic.py a trainfile.csv testfile.csv param.txt outputfile.txt weightfile.txt**
+Command to run the script: **python neural_a.py input_path output_path param.txt**
 
-It first creates the features (>=500) pertaining to the best model. It further selects the most predictive 500 features using **ANOVA** to build the classification model. We write the predictions (1 per line) and create a line aligned outputfile.txt, where the first line will correspond to the first row in testfile.csv and so on. We also output your weight matrix (which includes bias terms in the first row) by flattening the weight matrix rowwise, i.e., write the first row first (1 value per line), then second row and so on and create a line aligned weightfile.txt.
+The input training and test files for the toy dataset(filenames will remain same as provided) are present in **input_path** diretory (closing '\' also present in the path). We initialise a neural network with the parameters provided in the **param.txt** file (absolute path to param.txt including the filename) and write weights and predictions to **output_path** directory (closing '\' also present in the path).
 
-Note: The optimal features to be created were found using experimentation in "Part D" section of Assignment1.1.ipynb
+Note: param.txt will contain 8 lines specifying epochs, batch size, a list specifying the architecture([100,50,10] implies 2 hidden layers with 100 and 50 neurons and 10 neurons in the output layer), learning rate type(0 for fixed and 1 for adaptive), learning rate value, activation function(0 for log sigmoid, 1 for tanh, 2 for relu), loss function(0 for CE and 1 for MSE), seed value for the numpy.random.normal used for weights initialization. The order will be the same as here. 3 weights will be written to the output path for each layer in form of numpy arrays in w_l.npy file where l is the index (starting from 1) of the layers 1 to output layer (example: for architecture[100,50,10], the weight files will be w_1.npy, w_2.npy and w_3.npy). The predictions will be a 1-D numpy array written to the output path as predictions.npy file. Sample parameter files are available in **sample_params** folder of **src** directory.
+
 
 3. **neural_b.py**
 
+Command to run the script: **python neural_b.py input_path output_path param.txt**
+
+Everything is same as **neural_a** except **input_path** contains the Devanagri dataset files.
 
 
 4) **neural_c.py**
 
-Here, param.txt will contain three lines of input, the first being a number (1-3) indicating which learning rate strategy to use and the second being the fixed learning rate (for (i)), η<sub>0</sub> value for adaptive learning rate (for (ii)) or a comma separated (learning rate, α, β) value for αβ backtracking (for (iii)). The third line will be the exact number of epochs for your gradient updates. We use batch gradient descent using original features of the dataset with the specification provided in param.txt and generate output and weights file as done in logistic_features_selection.py.
+Command to run the script: **python neural_c.py input_path output_path param.txt**
+
+Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
+
 
 5) **neural_d.py**
 
-Here, we perform mini batch gradient descent using the original features of the dataset. The arguments mean the same as mode a, with an additional line 4 in param.txt specifying the batch size (int). 
+Command to run the script: **python neural_d.py input_path output_path**
 
 
-
-Here, we use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part C" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 10 minutes to run, and then killed (assignment constraints). No additonal features are created for this mode.
 
 
 Here, we directly create the features selected using ANOVA in logistic_features_selection.py to build the model. We use the optimal learning rate strategy and corresponding hyperparameters found using experimentation in "Part D" section of Assignment1.1.ipynb file. We again output the outputfile and weightfile as before. For this part, the code would be given 15 minutes to run, and then killed (assignment constraints). 
