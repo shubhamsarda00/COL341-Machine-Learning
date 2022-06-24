@@ -7,10 +7,12 @@ Devanagari characters (last column in both training and test data is for labels)
 
 **Part B**: We build another CNN architecture mentioned in the problem statement and train it on the **CIFAR-10 Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/jwFwJSETBGp4MGn). The training dataset has 8-bit 32x32 RGB images corresponding to 10 classes (First column (index=0) contains labels and rest 3072 columns of image data). Training parameters specified in the problem statement were followed. The results were compared with those obtained by the best ANN architecture found in part D of Assignment 2.1.
 
-
 **Part C**: This is the competitive part of the assignment. Here, we experiment with various CNN architectures, feature engineering techniques, optimizers, learning rates etc. to build a model with less than 3 million parameters (including both trainable and non-trainable) which achieves maximum accuracy on the private test set of CIFAR-10 Dataset. The private test set was only released after the assignment deadline. 
 
-Achieved **2<sup>nd</sup> rank** in the whole batch with an accuracy of **89.5%** on the private test set (4000 samples).
+Created a novel model (<3M Params) with a variant of the fused MBConv block, mentioned in https://arxiv.org/pdf/2104.00298v3.pdf, as basic building block of the CNN architecture. Achieved **2<sup>nd</sup> rank** in the whole batch with an accuracy of **89.5%** on the private test set (4000 samples).
+
+![image](https://user-images.githubusercontent.com/45795080/175501636-1cbb7588-e2bc-4d8e-bd31-af6ff4289d78.png)
+ 
 
 Details of the experiments done and final model implemented can be found in **report.pdf**.
 
