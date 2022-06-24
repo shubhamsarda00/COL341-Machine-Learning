@@ -27,44 +27,44 @@ The code for all the experiments (including the commented out code) can be found
 
 2. **train_a.py**
 
-Command to run the script: **python neural_a.py input_path output_path param.txt**
+Command to run the script: **python train_a.py train_data.csv test_data.csv model.pth loss.txt  accuracy.txt**
 
-The input training and test files for the toy dataset (filenames will remain same as provided) are present in **input_path** directory (closing \ also present in the path). We initialise a neural network with the parameters provided in the **param.txt** file (absolute path to param.txt including the filename) and write weights and predictions to **output_path** directory (closing \ also present in the path).
-
-Note: param.txt will contain 8 lines specifying epochs, batch size, a list specifying the architecture ([100,50,10] implies 2 hidden layers with 100 and 50 neurons and 10 neurons in the output layer), learning rate type (0 for fixed and 1 for adaptive), learning rate value, activation function (0 for log sigmoid, 1 for tanh, 2 for relu), loss function (0 for CE and 1 for MSE), seed value for the numpy.random.normal used for weights initialization. The order will be the same as here. 3 weights will be written to the output path for each layer in form of numpy arrays in w_l.npy file where l is the index (starting from 1) of the layers 1 to output layer (example: for architecture[100,50,10], the weight files will be w_1.npy, w_2.npy and w_3.npy). The predictions will be a 1-D numpy array written to the output path as predictions.npy file. Sample parameter files are available in **sample_params** folder of **src** directory.
-
+It trains the model associated with part A on the Devanagri dataset (complete path including filename in **train_data.csv**) and dumps the **model.pth** file in the same directory as your .py script. It further keeps track of average training loss for each epoch and test accuracy after each epoch wrt to the public test set  (complete path including filename in **test_data.csv**) containing labels in the last column. It then writes these loss and accuracy values for every epoch in a separate line in **loss.txt** and **accuracy.txt** respectively. 
 
 3. **train_b.py**
 
-Command to run the script: **python neural_b.py input_path output_path param.txt**
+Command to run the script: **python train_b.py train_data.csv test_data.csv model.pth loss.txt  accuracy.txt**
 
-Everything is same as **neural_a** except **input_path** contains the Devanagri dataset files.
-
+It trains the model associated with part B on the CIFAR-10 dataset (complete path including filename in **train_data.csv**) and dumps the **model.pth** file in the same directory as your .py script. It further keeps track of average training loss for each epoch and test accuracy after each epoch wrt to the public test set  (complete path including filename in **test_data.csv**) containing labels in the first column. It then writes these loss and accuracy values for every epoch in a separate line in **loss.txt** and **accuracy.txt** respectively. 
 
 4) **train_c.py**
 
-Command to run the script: **python neural_c.py input_path output_path param.txt**
+Command to run the script: **python train_c.py train_data.csv test_data.csv model.pth loss.txt  accuracy.txt**
 
-Here, **input_path** and **ouput_path** remain same as in part B. Here the file **param.txt**, to which the complete absolute path will be provided, will contain 1 line which will be a list specifying the architecture (just the way it is specified in param.txt for part a). The code must not exceed a time limit of 300 seconds. The script trains the specified model with the optimal parameters found and writes the weight files after training to the output path in the same format as in  part a. It also writes a text file to the output path with the name "my params.txt" specifying each of the following in a new line for your best parameters: number of epochs, batch size, learn rate type (0 for fixed 1 for adaptive), learn rate value (initial value in case of adaptive), activation function (0 for log sigmoid, 1 for tanh, 2 for relu), loss function (0 for CE an 1 for MSE), optimizer type (0 for vanilla SGD, 1 for momentum, 2 for nesterov, 3 for RMSprop and 4 for adam, 5 for nadam), seed value for the numpy.random.normal
+It trains the model associated with part C on the CIFAR-10 dataset (complete path including filename in **train_data.csv**) and dumps the **model.pth** file in the same directory as your .py script. It further keeps track of average training loss for each epoch and test accuracy after each epoch wrt to the public test set  (complete path including filename in **test_data.csv**) containing labels in the first column. It then writes these loss and accuracy values for every epoch in a separate line in **loss.txt** and **accuracy.txt** respectively. 
 
-We use the optimal hyperparameters found for both the architectures using experimentation in "Part C" section of Assignment2.1.ipynb file. 
+We use the best model architecture and optimal training specifications found using experimentation in "Part C" section of Assignment2.2.ipynb file. Details of the experiments done and final model implemented can be found in **report.pdf**.
 
 
 5) **test_a.py**
 
-Command to run the script: **python neural_d.py input_path output_path**
+Command to run the script: **python test_a.py private_test_data.csv trained_model.pth pred.txt**
 
-Here, **input_path** and **ouput_path** remain same as in part B. The script trains the best architecture along with best parameters (found using experimentation in "Part D" section of Assignment2.1.ipynb file). It produces the weight files to output path in the same way as specified for part a). It also write a text file to the output path with the name my params.txt specifying each of the following in a new line for your best parameters:number of epochs, batch size, learn rate type (0 for fixed 1 for adaptive), learn rate value (initial value in case of adaptive), activation function (0 for log sigmoid, 1 for tanh, 2 for relu), loss function (0 for CE an 1 for MSE), optimizer type (0 for vanilla SGD, 1 for momentum, 2 for nesterov, 3 for RMSprop and 4 for adam, 5 for nadam), architecture (list specifying architecture, [100,50,10] implies 2 hidden layers with 100 and 50 neurons and 10 neurons in the output layer), seed value for the numpy.random.normal
-
+It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
 
 6) **test_b.py**
 
-Command to run the script: **python neural_d.py input_path output_path**
+Command to run the script: **python test_b.py private_test_data.csv trained_model.pth pred.txt**
+
+It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
 
 7) **test_c.py**
 
-Command to run the script: **python neural_d.py input_path output_path**
+Command to run the script: **python test_a.py private_test_data.csv trained_model.pth pred.txt**
 
+It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
+
+**Note**: **private_test_data.csv** for all the test scripts should **not** contain the label column. Pretrained weights for models can be found in **pretrained_weights** folder of **src** directory. 
 
 ### Libraries Required
 
