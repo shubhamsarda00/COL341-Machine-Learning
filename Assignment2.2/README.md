@@ -50,19 +50,19 @@ We use the best model architecture and optimal training specifications found usi
 
 Command to run the script: **python test_a.py private_test_data.csv trained_model.pth pred.txt**
 
-It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
+It loads the pretrained model weights (using torch.load()) corresponding to the model in part A and generates the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). The prediction labels for test data samples are written to **pred.txt**, each in separate line. 
 
 6) **test_b.py**
 
 Command to run the script: **python test_b.py private_test_data.csv trained_model.pth pred.txt**
 
-It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
+It loads the pretrained model weights (using torch.load()) corresponding to the model in part B and generates the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). The prediction labels for test data samples are written to **pred.txt**, each in separate line. 
 
 7) **test_c.py**
 
 Command to run the script: **python test_a.py private_test_data.csv trained_model.pth pred.txt**
 
-It loads the pretrained model weights (using torch.load()) and generate the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). It also generates **pred.txt** which contains prediction labels for test data samples in separate lines. 
+It loads the pretrained model weights (using torch.load()) corresponding to the model in part C and generates the predictions corresponding to the given test data (complete path including filename in **private_test_data.csv**). The prediction labels for test data samples are written to **pred.txt**, each in separate line.  
 
 **Note**: **private_test_data.csv** for all the test scripts should **not** contain the label column. Pretrained weights for models can be found in **pretrained_weights** folder of **src** directory. 
 
