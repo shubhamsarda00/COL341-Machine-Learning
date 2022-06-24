@@ -1,16 +1,14 @@
 # Assignment 2.2
 
-![Screenshot 2022-06-14 164713](https://user-images.githubusercontent.com/45795080/175480752-ab8f19ae-eb97-43ab-83bd-0fb26a4622a3.png)
-
 In this assignment, we implement **Convoluional Neural Networks** using **PyTorch** library. The assignment can be broken down into 3 parts:
 
-**Part A**: We build CNN architecture mentioned in the problem statement and train it on a **Devanagri Character Recognition Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk). The training dataset has 8-bit 32x32 greyscale images corresponding to 46
-Devanagari characters (last column in both training and test data is for labels). Training parameters specified in the problem statement were followed. The results were compared with those obtained by the best ANN architecture found in Assignment 2.1.
+**Part A**: We build the CNN architecture mentioned in the problem statement and train it on the **Devanagri Character Recognition Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/TnQqxF4oo6sT2xk). The training dataset has 8-bit 32x32 greyscale images corresponding to 46
+Devanagari characters (last column in both training and test data is for labels). Training parameters specified in the problem statement were followed. The results were compared with those obtained by the best ANN architecture found in part D of Assignment 2.1.
 
-**Part B**: We build another CNN architecture mentioned in the problem statement and train it on a **CIFAR-10 Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/jwFwJSETBGp4MGn). The training dataset has 8-bit 32x32 RGB images corresponding to 10 classes (First column (index=0) contains labels and rest 3072 columns of image data). Training parameters specified in the problem statement were followed. The results were compared with those obtained by the best ANN architecture found in Assignment 2.1.
+**Part B**: We build another CNN architecture mentioned in the problem statement and train it on the **CIFAR-10 Dataset** (https://owncloud.iitd.ac.in/nextcloud/index.php/s/jwFwJSETBGp4MGn). The training dataset has 8-bit 32x32 RGB images corresponding to 10 classes (First column (index=0) contains labels and rest 3072 columns of image data). Training parameters specified in the problem statement were followed. The results were compared with those obtained by the best ANN architecture found in part D of Assignment 2.1.
 
 
-**Part C**: This is the competitive part of the assignment. Here, we experiment with various CNN architectures, feature engineering techniques, optimizers, learning rates etc. to build a model with less than 3 million parameters (including both trainable and non-trainable) to maximize accuracy on the private test set of CIFAR-10 Dataset. The private test set was only released after the assignment deadline. 
+**Part C**: This is the competitive part of the assignment. Here, we experiment with various CNN architectures, feature engineering techniques, optimizers, learning rates etc. to build a model with less than 3 million parameters (including both trainable and non-trainable) which achieves maximum accuracy on the private test set of CIFAR-10 Dataset. The private test set was only released after the assignment deadline. 
 
 Achieved **2<sup>nd</sup> rank** in the whole batch with an accuracy of **89.5%** on the private test set (4000 samples).
 
