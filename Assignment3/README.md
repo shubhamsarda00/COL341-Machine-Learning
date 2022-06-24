@@ -2,7 +2,7 @@
 
 This assignement was purely competitive and held as an in-house **Kaggle Competition** (https://www.kaggle.com/competitions/col341-a3/). In this problem, we train neural networks to classify yoga poses into different classes. **Yoga pose estimation** has multiple applications such as in creating a mobile application for yoga trainer. There are 19 types of Asanas in the dataset and 29K images for training a machine learning model. Training set contains images from 3 camera angles, whereas the private test set contains images from an unseen 4<sup>th</sup> camera angle. This acts as an impediment in achieving high test accuracy.
 
-We experimented with various CNN architectures, data augmentaion, segmentation followed by classification, key point detection followed by classification etc. Finally, achieved maximum accuracy with a **weighted ensemble** of **XceptionNet**, **EfficientNetB4**, **EfficientNetB5** and **ResNet50V2**. 
+We experimented with various CNN architectures, data augmentation, segmentation followed by classification, key point detection followed by classification etc. Finally, achieved maximum accuracy with a **weighted ensemble** of **XceptionNet**, **EfficientNetB4**, **EfficientNetB5** and **ResNet50V2**. 
 
 Achieved **1<sup>st</sup> rank** in the Kaggle competition with a private test accuracy of **82.2%** (https://www.kaggle.com/competitions/col341-a3/leaderboard).
 
